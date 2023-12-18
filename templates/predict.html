@@ -1,0 +1,148 @@
+{% extends "base2.html" %} {% block content %}
+<div class="loan">
+  <div class="loan_form">
+    <h1>Loan Approval Form</h1>
+    <form action="{{ url_for('predict')}}" method="post">
+      <table>
+        <tr>
+          <td><label for="ApplicantIncome">Applicant Income:</label></td>
+          <td>
+            <input
+              type="number"
+              id="ApplicantIncome"
+              name="ApplicantIncome"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="CoapplicantIncome">Co-Applicant Income:</label>
+          </td>
+          <td>
+            <input
+              type="number"
+              id="CoapplicantIncome"
+              name="CoapplicantIncome"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="LoanAmount">Loan Amount:</label></td>
+          <td>
+            <input
+              type="number"
+              id="LoanAmount"
+              name="LoanAmount"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="Dependents">Dependents:</label></td>
+          <td>
+            <input
+              type="number"
+              id="Dependents"
+              name="Dependents"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="Loan_Amount_Term">Loan Amount Term:</label></td>
+          <td>
+            <input
+              type="number"
+              id="Loan_Amount_Term"
+              name="Loan_Amount_Term"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="Credit_History">Credit History:</label></td>
+          <td>
+            <input
+              type="number"
+              id="Credit_History"
+              name="Credit_History"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="Gender">Gender:</label></td>
+          <td>
+            <select id="Gender" name="Gender" required>
+              <option selected>Choose...</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="Married">Marital Status:</label></td>
+          <td>
+            <select id="Married" name="Married" required>
+              <option selected>Choose...</option>
+              <option value="Yes">Married</option>
+              <option value="No">UnMarried</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="Self_Employed">Are you Self Employed?</label></td>
+          <td>
+            <select
+              name="Self_Employed"
+              id="Self_Employed"
+              required="required"
+            >
+              <option selected>Choose...</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+            <!-- <label for="self_employed_no">No</label> -->
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="Education"
+              >Have you completed your Graduation?</label
+            >
+          </td>
+          <td>
+            <select
+              name="Education"
+              id="Education"
+              required="required"
+              class="form-select"
+            >
+              <option selected>Choose...</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+            <!-- <label for="graduation_completed_no">No</label> -->
+          </td>
+        </tr>
+        <tr>
+          <td><label for="Property_Area">Property Area:</label></td>
+          <td>
+            <select id="Property_Area" name="Property_Area" required>
+              <option value="Urban">Urban</option>
+              <option value="SemiUrban">Semi-Urban</option>
+              <option value="Rural">Rural</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2"><input type="submit" value="Submit" /></td>
+        </tr>
+      </table>
+    </form>
+    <br><h3>{{ prediction_text }}<h3></h3>
+  </div>
+</div>
+{% endblock %}

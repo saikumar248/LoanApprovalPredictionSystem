@@ -1,0 +1,9 @@
+{% extends "base2.html" %} {% block content %}
+<div class="table_heading">
+  <span>Charts</span>
+</div>
+<div class="container_chart">
+  <img src="{{ url_for('static', filename='chart.png') }}" alt="Line Chart" />
+  <img src="{{ url_for('static', filename='confuse.png') }}" alt="Line Chart" />
+</div>
+{% endblock %}
